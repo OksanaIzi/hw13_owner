@@ -11,10 +11,11 @@ import java.nio.charset.StandardCharsets;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
-public class AttachmentHelper {@Attachment(value = "{attachName}", type = "text/plain")
-public static String attachAsText(String attachName, String message) {
-    return message;
-}
+public class AttachmentHelper {
+    @Attachment(value = "{attachName}", type = "text/plain")
+    public static String attachAsText(String attachName, String message) {
+        return message;
+    }
 
     @Attachment(value = "Page source", type = "text/plain")
     public static byte[] attachPageSource() {
@@ -33,7 +34,7 @@ public static String attachAsText(String attachName, String message) {
                 + "' type='video/mp4'></video></body></html>";
     }
 
-    public static String getSessionId(){
+    public static String getSessionId() {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
     }
 
